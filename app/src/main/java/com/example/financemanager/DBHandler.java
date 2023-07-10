@@ -42,14 +42,15 @@ public class DBHandler extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL("create table if not exists category(ID interget primary key autoincrement, name varchar(20), icon varchar(20))");
+        db.execSQL("create table if not exists category(ID interget primary key autoincrement, name varchar(20), icon varchar(20));");
 
-        db.execSQL("create table if not exists currencyTbl(shortForm varchar(4) primary key ,symbol varchar(1), country varchar(70))");
+        db.execSQL("create table if not exists currencyTbl(shortForm varchar(4) primary key ,symbol varchar(1), country varchar(70));");
 
-        db.execSQL("create table if not exists Accounts(Accno varchar(20) primary key, debitAccountNo varchar(20), creditCardAccountNo varchar(20), balance float not null)");
+        db.execSQL("create table if not exists Accounts" +
+                "(Accno varchar(20) primary key, debitAccountNo varchar(20), creditCardAccountNo varchar(20), balance float not null,currency varchar(4), foreign key(currency) references currencyTbl(shortForm));");
 
         db.execSQL("create table if not exists transaction_hist" +
-        "(TransID integer primary key autoincrement ,Amount float not null, Date datetime not null,transType integer check(transType in (-1,1)),currency varchar(4),categoryID integer,note varchar(100),msg varchar(2000)," +
+        "(TransID integer primary key autoincrement ,Amount float not null, Date datetime not null,payee varchar(50),transType integer check(transType in (-1,1)),currency varchar(4),categoryID integer,note varchar(100),msg varchar(2000)," +
         "note varchar(200),PaymentMethod varchar(4) check(PaymentMethod in ('Cash','Bank','Card')), Accno varchar(20)," +
         "foreign key(categoryID) references category(ID), foreign key(currency) references currencyTbl(shortForm), foreign key(Accno) references Accounts(Accno));");
     }
