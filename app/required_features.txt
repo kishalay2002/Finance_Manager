@@ -1,0 +1,2 @@
+Income/Expense button should have resizable text
+There is a limit to the transaction value that can be added

@@ -1,18 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".Home">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="491dp"
-        android:layout_height="61dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="100dp"
-        android:text="Home"
-        android:textAlignment="center"
-        android:textSize="34sp" />
+    <RelativeLayout
 
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/fixed_thisMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.055"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:text="This  month"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="normal|bold" />
+
+        <Button
+            android:id="@+id/expense"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="65dp"
+            android:backgroundTint="#BA0F30"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:text="Expense\n$1200"
+            android:textAllCaps="false"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/expense_btn_key"
+            app:iconSize="37dp"
+            app:iconTint="#F57474" />
+
+        <Button
+            android:id="@+id/income"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="65dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#81B622"
+            android:isScrollContainer="false"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:text="Income\n$1200"
+            android:textAllCaps="false"
+            app:cornerRadius="30dp"
+            app:icon="@drawable/income_btm_key"
+            app:iconGravity="end"
+            app:iconSize="37dp"
+            app:iconTint="#A4FFBE" />
+
+        <Button
+            android:id="@+id/balance"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="145dp"
+            android:backgroundTint="#808080"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:text="Balance: $1200"
+            android:textAllCaps="false"
+            app:cornerRadius="30dp" />
+
+        <TextView
+            android:id="@+id/fiexed_recentTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.055"
+            android:text="Recent Transactions"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="195dp"/>
+
+        <TextView
+            android:id="@+id/fixed_seeAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See All"
+            android:textColor="#F9DB22"
+            android:textSize="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="27dp"
+            android:layout_marginTop="200dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="230dp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="#3A0125"
+            android:background="@drawable/home_transaction"></FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="305dp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="#034933"
+            android:background="@drawable/home_transaction"></FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="380dp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="#3A0125"
+            android:background="@drawable/home_transaction"></FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="455dp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="#3A0125"
+            android:background="@drawable/home_transaction"></FrameLayout>
+
+        <TextView
+            android:id="@+id/fixed_monthly_budget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="538dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.055"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:text="Monthly Budget"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/fixed_addBudget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Budget"
+            android:textColor="#F9DB22"
+            android:textSize="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="27dp"
+            android:layout_marginTop="547dp"/>
+    </RelativeLayout>
+</ScrollView>
