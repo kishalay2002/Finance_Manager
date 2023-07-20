@@ -35,7 +35,8 @@ public class DBHandler extends SQLiteOpenHelper
     // below variable is for our course tracks column.
     private static final String TRACKS_COL = "tracks";
 
-    public DBHandler(@Nullable Context context ) {
+    public DBHandler(@Nullable Context context )
+    {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
@@ -44,10 +45,10 @@ public class DBHandler extends SQLiteOpenHelper
     {
         db.execSQL("create table if not exists category(ID interget primary key autoincrement, name varchar(20), icon varchar(20));");
 
-        db.execSQL("create table if not exists currencyTbl(shortForm varchar(4) primary key ,symbol varchar(1), country varchar(70));");
+        db.execSQL("create table if not exists currencyTbl(shortForm varchar(4) primary key ,symbol varchar(1), country varchar(70),budget float default null,amountSpent float default null);");
 
         db.execSQL("create table if not exists Accounts" +
-                "(Accno varchar(20) primary key, debitAccountNo varchar(20), creditCardAccountNo varchar(20), balance float not null,currency varchar(4), foreign key(currency) references currencyTbl(shortForm));");
+                "(Accno varchar(20) primary key, debitAccountNo varchar(20) default null, creditCardAccountNo varchar(20) default null, balance float not null,currency varchar(4), foreign key(currency) references currencyTbl(shortForm));");
 
         db.execSQL("create table if not exists transaction_hist" +
         "(TransID integer primary key autoincrement ,Amount float not null, Date datetime not null,payee varchar(50),transType integer check(transType in (-1,1)),currency varchar(4),categoryID integer,note varchar(100),msg varchar(2000)," +

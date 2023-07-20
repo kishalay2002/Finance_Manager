@@ -1,16 +1,33 @@
 package com.example.financemanager;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+
 import android.os.Bundle;
+
+import android.os.StrictMode;
+import android.util.AttributeSet;
+
+import android.provider.Telephony;
+
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+import android.view.View;
+import android.widget.Toast;
+
 
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,13 +44,20 @@ public class MainActivity extends AppCompatActivity
 {
     private AdView mAdView;
 
+    private static final int READ_SMS_PERMISSION_CODE = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder(StrictMode.getVmPolicy())
+                .detectLeakedClosableObjects()
+                .build());
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+
 
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -49,11 +73,25 @@ public class MainActivity extends AppCompatActivity
         BottomNavigationView btNav2 = findViewById(R.id.bottomnav2);
         BottomNavigationView btNav1 = findViewById(R.id.bottomnav1);
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED)
+        {
+            Log.d("Function","Not Called");
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_SMS}, READ_SMS_PERMISSION_CODE);
+        }
+        else
+        {
+            //readMessages();
+            Log.d("Function","Called");
+        }
+
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         //TextView tx = findViewById(R.id.textView);
 
         //Unchecking BottomNav2 by default
+
+
+
         uncheckNav(btNav2.getMenu());
         btNav1.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
         {
@@ -75,7 +113,20 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+    }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == READ_SMS_PERMISSION_CODE)
+        {
+            if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED)
+            {
+                Toast.makeText(this, "Permission denied. Cannot read SMS.", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @Override

@@ -40,7 +40,6 @@
             android:backgroundTint="#BA0F30"
             android:paddingStart="5dp"
             android:paddingTop="5dp"
-            android:text="Expense\n$1200"
             android:textAllCaps="false"
             app:cornerRadius="30dp"
             app:icon="@drawable/expense_btn_key"
@@ -59,7 +58,6 @@
             android:isScrollContainer="false"
             android:paddingTop="5dp"
             android:paddingEnd="5dp"
-            android:text="Income\n$1200"
             android:textAllCaps="false"
             app:cornerRadius="30dp"
             app:icon="@drawable/income_btm_key"
@@ -98,6 +96,20 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="195dp"/>
 
+
+        <ImageView
+            android:id="@+id/reloadMsg"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="223dp"
+            android:layout_marginTop="197dp"
+            android:src="@drawable/rotate_right_24"
+            android:alpha="1"
+            android:clickable="true"
+            android:focusable="true"/>
+
         <TextView
             android:id="@+id/fixed_seeAll"
             android:layout_width="wrap_content"
@@ -111,6 +123,7 @@
             android:layout_marginTop="200dp"/>
 
         <FrameLayout
+            android:id="@+id/trans1"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_alignParentEnd="true"
@@ -119,8 +132,51 @@
             android:layout_marginEnd="20dp"
             android:layout_marginTop="230dp"
             android:layout_marginStart="20dp"
-            android:backgroundTint="#3A0125"
-            android:background="@drawable/home_transaction"></FrameLayout>
+            android:backgroundTint="#680320"
+            android:background="@drawable/home_transaction">
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+
+
+                <FrameLayout
+                    android:id="@+id/trans1icon"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="0dp"
+                    />
+
+                <FrameLayout
+                    android:id="@+id/trans1date"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="0dp"/>
+
+                <TextView
+                    android:id="@+id/trans1sender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="55dp"
+                    />
+                <TextView
+                    android:id="@+id/trans1amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="55dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="40dp"
+                    />
+            </RelativeLayout>
+        </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -132,7 +188,50 @@
             android:layout_marginTop="305dp"
             android:layout_marginStart="20dp"
             android:backgroundTint="#034933"
-            android:background="@drawable/home_transaction"></FrameLayout>
+            android:background="@drawable/home_transaction">
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+
+
+                <FrameLayout
+                    android:id="@+id/trans2icon"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="0dp"
+                    />
+
+                <FrameLayout
+                    android:id="@+id/trans2date"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="0dp"/>
+
+                <TextView
+                    android:id="@+id/trans2sender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="55dp"
+                    />
+                <TextView
+                    android:id="@+id/trans2amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="55dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="40dp"
+                    />
+            </RelativeLayout>
+        </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -143,8 +242,51 @@
             android:layout_marginEnd="20dp"
             android:layout_marginTop="380dp"
             android:layout_marginStart="20dp"
-            android:backgroundTint="#3A0125"
-            android:background="@drawable/home_transaction"></FrameLayout>
+            android:backgroundTint="#680320"
+            android:background="@drawable/home_transaction">
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+
+
+                <FrameLayout
+                    android:id="@+id/trans3icon"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="0dp"
+                    />
+
+                <FrameLayout
+                    android:id="@+id/trans3date"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="0dp"/>
+
+                <TextView
+                    android:id="@+id/trans3sender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="55dp"
+                    />
+                <TextView
+                    android:id="@+id/trans3amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="55dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="40dp"
+                    />
+            </RelativeLayout>
+        </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -155,8 +297,51 @@
             android:layout_marginEnd="20dp"
             android:layout_marginTop="455dp"
             android:layout_marginStart="20dp"
-            android:backgroundTint="#3A0125"
-            android:background="@drawable/home_transaction"></FrameLayout>
+            android:backgroundTint="#680320"
+            android:background="@drawable/home_transaction">
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+
+
+                <FrameLayout
+                    android:id="@+id/trans4icon"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="0dp"
+                    />
+
+                <FrameLayout
+                    android:id="@+id/trans4date"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="0dp"/>
+
+                <TextView
+                    android:id="@+id/trans4sender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="55dp"
+                    />
+                <TextView
+                    android:id="@+id/trans4amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="55dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="40dp"
+                    />
+            </RelativeLayout>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/fixed_monthly_budget"
